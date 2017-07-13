@@ -9,6 +9,10 @@ assembly_info:
   assembly_version: '{version}'
   assembly_file_version: '{version}'
   assembly_informational_version: '{version}'
+before_build:
+- ps: >-
+    $version=$([regex]"(?i)AssemblyFileVersion\(`"(.*?)`"\)").matches($(gc .\src\GlavoUI\Properties\AssemblyInfo.cs)).Groups[1].Value
+    sc .\src\GlavoUI\GlavoUI.nuspec $(gc  .\src\GlavoUI\GlavoUI.nuspec).replace('$version$',$version)
 build:
   publish_nuget: true
   verbosity: minimal
