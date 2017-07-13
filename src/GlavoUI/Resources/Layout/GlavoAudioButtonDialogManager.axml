@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/glavo_audio_dialog_loading_bg"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="20dp">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/GlavoAudioButtonDialogManager_Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/glavo_audio_recorder"
+            android:visibility="visible" />
+        <ImageView
+            android:id="@+id/GlavoAudioButtonDialogManager_Voice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/glavo_audio_v1"
+            android:visibility="visible" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/GlavoAudioButtonDialogManager_Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/GlavoAudioRecordButtonUpToCancel"
+        android:textColor="#ffffffff" />
+</LinearLayout>
