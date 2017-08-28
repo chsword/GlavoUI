@@ -47,12 +47,17 @@ namespace GlavoUI
 
         public AudioRecordButton(Context context, IAttributeSet attrs) : base(context, attrs)
         {
-            _mDialogManager = new AudioButtonDialogManager(Context);
-
+            if (_mDialogManager == null)
+            {
+                _mDialogManager = new AudioButtonDialogManager(Context);
+            }
             // 这里没有判断储存卡是否存在，有空要判断
             var dir = $"{Android.OS.Environment.ExternalStorageDirectory}/message_audios";
-            _mAudioManager = AudioManager.GetInstance(dir);
-            _mAudioManager.Prepared += AudioManagerPrepared;
+            if (_mAudioManager == null)
+            {
+                _mAudioManager = AudioManager.GetInstance(dir);
+                _mAudioManager.Prepared += AudioManagerPrepared;
+            }
             LongClick += AudioButtonLongClick;
         }
 
