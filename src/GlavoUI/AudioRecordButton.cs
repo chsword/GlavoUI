@@ -47,10 +47,9 @@ namespace GlavoUI
 
         public AudioRecordButton(Context context, IAttributeSet attrs) : base(context, attrs)
         {
-            if (_mDialogManager == null)
-            {
-                _mDialogManager = new AudioButtonDialogManager(Context);
-            }
+         
+            _mDialogManager = new AudioButtonDialogManager(Context);
+          
             // 这里没有判断储存卡是否存在，有空要判断
             var dir = $"{Android.OS.Environment.ExternalStorageDirectory}/message_audios";
             if (_mAudioManager == null)
